@@ -7,18 +7,21 @@ import { UserData } from './interface.ts';
 
 const App = () => {
   const [ data, setData ] = useState(null)
-
+  const [ username , setUsername ] = useState("")
+  console.log(username)
     
-  const handleApiRequest = async () => {
-    const userEntry:string  = 'https://api.github.com/users';
-
+  const handleApiRequest = async (username) => {
+    console.log(username)
+    const userEntry:string  = `https://api.github.com/users/${username}`;
+    // console.log(userEntry);
     try{
       const response = await fetch(userEntry);
       if(!response.ok){
         throw new Error("Request failed with status: " + response.status)
       }
-      const users: UserData[] = await response.json();
-      console.log(users)
+      const user: UserData = await response.json();
+
+      setData(user)
     }catch(error){
       console.log(error)
     }
@@ -38,8 +41,8 @@ const App = () => {
             </svg>
           </div>
         </header>
-        <SearchUser /* search={} */ handleRequest={handleApiRequest}/>
-        <UserDetails />
+        <SearchUser username={username} setUsername={setUsername} handleRequest={handleApiRequest}/>
+        <UserDetails  data={data}/>
       </div>
     </div>
   );
