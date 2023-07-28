@@ -21,7 +21,7 @@ const UserDetails = ({data}) => {
                 </section>
                 <section className='ml-[9.4rem] mr-4 mx-4 '>
                     <p className='text-[#b4b7c2]'>{data.bio}</p>
-                    <div className='w-full rounded-[0.8rem] h-[8rem] bg-[#f4f9ff] flex flex-row gap-4 items-center justify-center'>
+                    <div className='w-full rounded-[0.8rem] h-[8rem] bg-[#f4f9ff] flex flex-row gap-10 items-center justify-center'>
                         <div className='flex flex-col'>
                             <p className='text-[#a7b0c0]'>Repos</p>
                             <p className='font-bold text-[1.1rem]'>{data.public_repos}</p>
@@ -36,7 +36,7 @@ const UserDetails = ({data}) => {
                         </div>
                     </div>
                 </section>
-                <section className='text-[#b4b7c2] flex flex-row gap-4 items-center self-end mr-5'>
+                <section className='text-[#b4b7c2] flex flex-row gap-6 items-center self-end mr-6'>
                     <div className='flex flex-col gap-y-2'>
                         <div className='flex gap-2'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 fill-[#4c6896]">
