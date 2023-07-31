@@ -6,6 +6,9 @@ const UserDetails = ({data}) => {
         return <div>No user data available</div>;
     }
 
+    const createdDate = data.created_at ? data.created_at.substring(0, 10) : "";
+
+
     return (
         <div>
             <main className='flex flex-col gap-y-6 pt-10 h-[30rem] bg-[#fffffe]'>
@@ -17,7 +20,7 @@ const UserDetails = ({data}) => {
                         <h1 className='text-[#5f636b] text-[1.7rem] font-semibold'>{data.name}</h1>
                         <p className='text-[#70cafc] font-medium'>@{data.login}</p>
                     </div>
-                    <p className='h-6 text-[#c7c6cd] font-medium'>Joined {data.created_at.substring(0, 10)}</p>
+                    <p className='h-6 text-[#c7c6cd] font-medium'>Joined {createdDate}</p>
                 </section>
                 <section className='ml-[9.4rem] mr-4 mx-4 '>
                     <p className='text-[#b4b7c2]'>{data.bio}</p>
