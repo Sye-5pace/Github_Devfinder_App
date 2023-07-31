@@ -1,17 +1,16 @@
 import React from 'react'
 
 
-const UserDetails = ({data}) => {
+const UserDetails = ({data, theme}) => {
     if(!data){
-        return <div>No user data available</div>;
+        return <div className={`${theme === 'light' ? 'text-[#000]' : 'text-[#d2d8de]' }`}>No user data available</div>;
     }
 
     const createdDate = data.created_at ? data.created_at.substring(0, 10) : "";
 
-
     return (
         <div>
-            <main className='flex flex-col gap-y-6 pt-10 h-[30rem] bg-[#fffffe]'>
+            <main className={`flex flex-col gap-y-6 pt-10 h-[30rem] ${theme === 'light' ? 'bg-[#fffffe]' : 'bg-[#1f2a48]'}`}>
                 <section className='flex flex-row gap-4 mx-4'>
                     <div className='h-[10rem] w-[10rem] rounded-full'>
                         <img className='rounded-full' src={data.avatar_url}/>

@@ -22,7 +22,7 @@ const App = () => {
       setStoreTheme(storedTheme);
       dispatch(setTheme(storedTheme));
     }
-  })
+  },[dispatch])
     
   const handleApiRequest = async (username) => {
     console.log(username)
@@ -46,7 +46,7 @@ const App = () => {
       {console.log(theme)}
       <div className=' w-[60%] flex flex-col gap-y-6'>
         <header className='flex flex-row items-center justify-between'>
-          <h1 className='text-[#4f535b] font-bold text-[1.7rem]'>
+          <h1 className={`${theme === 'light' ? 'text-[#4f535b]' : 'text-[#d3d4d8]'} font-bold text-[1.7rem]`}>
             devfinder
           </h1>
           <ThemeSwitcher theme={storeTheme} setStoreTheme={setStoreTheme} />
