@@ -1,4 +1,3 @@
-import React,{useState ,useEffect} from 'react'
 
 const SearchUser = ({ username, setUsername, handleRequest, theme }) => {
     // const [user,setUser] = useState("")

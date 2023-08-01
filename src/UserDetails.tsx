@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 const UserDetails = ({data, theme}) => {
     if(!data){
         return <div className={`${theme === 'light' ? 'text-[#000]' : 'text-[#d2d8de]' }`}>No user data available</div>;
