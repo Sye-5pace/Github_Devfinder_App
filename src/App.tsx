@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import React,{ useState,useEffect } from 'react'
 import './index.css';
 import { useDispatch, useSelector } from 'react-redux'
 import SearchUser from './SearchCard.tsx';
@@ -6,13 +6,12 @@ import UserDetails from './UserDetails.tsx';
 import ThemeSwitcher from './Theme-switcher.tsx';
 import { UserData } from './interface.ts';
 import { setTheme } from './store.ts';
-// import LightSvg from './assets/light.svg';
 
-const App = () => {
-  const theme = useSelector((state)=> state.theme);
+const App: React.FC = () => {
+  const theme = useSelector((state: { theme: string })=> state.theme);
   const [data, setData] = useState<UserData | null>(null);
-  const [ username , setUsername ] = useState("")
-  const [ storeTheme , setStoreTheme ] = useState('dark')
+  const [ username , setUsername ] = useState<string>("")
+  const [ storeTheme , setStoreTheme ] = useState<string>('dark')
   const dispatch = useDispatch()
   console.log(username)
 
@@ -24,10 +23,8 @@ const App = () => {
     }
   },[dispatch])
     
-  const handleApiRequest = async (username) => {
-    console.log(username)
+  const handleApiRequest = async (username: string) => {
     const userEntry:string  = `https://api.github.com/users/${username}`;
-    // console.log(userEntry);
     try{
       const response = await fetch(userEntry);
       if(!response.ok){
@@ -58,7 +55,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// Dark theme Color
-//

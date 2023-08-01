@@ -2,12 +2,17 @@ import  React from 'react';
 import { useDispatch } from 'react-redux';
 import { setTheme } from './store';
 
+interface ThemeSwitcherProps {
+    theme: string;
+    setStoreTheme: React.Dispatch<React.SetStateAction<string>>
+}
 
-const ThemeSwitcher = ({theme, setStoreTheme})=>{
+
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({theme, setStoreTheme})=>{
     const dispatch = useDispatch();
 
     const handleThemeToggle = ():void => {
-        const newTheme: string = theme === 'light' ? 'dark' : 'light';
+        const newTheme: 'light'|'dark' = theme === 'light' ? 'dark' : 'light';
         dispatch(setTheme(newTheme));
         localStorage.setItem('theme', newTheme);
         setStoreTheme(newTheme);

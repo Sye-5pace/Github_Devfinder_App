@@ -1,4 +1,12 @@
-const UserDetails = ({data, theme}) => {
+import React from 'react';
+import { UserData } from './interface.ts';
+
+interface UserDetailsProps {
+    data: UserData | null;
+    theme: string;
+}
+
+const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
     if(!data){
         return <div className={`${theme === 'light' ? 'text-[#000]' : 'text-[#d2d8de]' }`}>No user data available</div>;
     }

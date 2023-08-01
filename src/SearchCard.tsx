@@ -1,7 +1,14 @@
+import React from 'react';
 
-const SearchUser = ({ username, setUsername, handleRequest, theme }) => {
-    // const [user,setUser] = useState("")
+interface SearchUserProps {
+    username: string;
+    setUsername: React.Dispatch<React.SetStateAction<string>>;
+    handleRequest: (username: string) => void;
+    theme: string
+}
 
+
+const SearchUser: React.FC<SearchUserProps> = ({ username, setUsername, handleRequest, theme }) => {
 
     return (
         <div className='' >

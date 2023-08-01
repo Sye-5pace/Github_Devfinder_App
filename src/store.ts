@@ -1,8 +1,12 @@
-import { createStore } from 'redux'
+import { createStore,AnyAction } from 'redux'
 
-const initialState = { theme: 'light' };
+interface ThemeState {
+    theme: string;
+}
 
-const themeReducer = (state = initialState, action ) => {
+const initialState: ThemeState = { theme: 'light' };
+
+const themeReducer = (state: ThemeState = initialState, action: AnyAction ) => {
     switch (action.type) {
         case 'SET_THEME':
             return {
@@ -18,7 +22,7 @@ const themeReducer = (state = initialState, action ) => {
 
 const store = createStore(themeReducer);
 
-export const setTheme = (theme:string) => ({
+export const setTheme = (theme: string) => ({
     type: 'SET_THEME',
     payload: theme,
 });
