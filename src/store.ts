@@ -18,7 +18,7 @@ const themeReducer = (state = initialState, action ) => {
 
 const store = createStore(themeReducer);
 
-export const setTheme = (theme) => ({
+export const setTheme = (theme:string) => ({
     type: 'SET_THEME',
     payload: theme,
 });
