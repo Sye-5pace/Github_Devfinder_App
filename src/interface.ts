@@ -5,7 +5,7 @@ export interface UserData {
     avatar_url: string;
     gravatar_id: string;
     url: string;
-    html_url: string;
+    html_url: string | null;
     followers_url: string;
     following_url: string;
     gists_url: string;
@@ -19,7 +19,7 @@ export interface UserData {
     site_admin: boolean;
     name: string;
     company: string | null;
-    blog: string | null;
+    blog: string | undefined;
     location: string | null;
     email: string | null;
     hireable: boolean | null;
@@ -32,3 +32,7 @@ export interface UserData {
     created_at: string;
     updated_at: string;
   }
+
+  // blog: string | null;
+  // html_url: string | null;
+  // company: string | null;
