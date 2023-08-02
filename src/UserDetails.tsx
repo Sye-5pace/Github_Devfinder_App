@@ -11,8 +11,16 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
         return <div className={`${theme === 'light' ? 'text-[#000]' : 'text-[#d2d8de]' }`}>No user data available</div>;
     }
 
-    const createdDate = data.created_at ? data.created_at.substring(0, 10) : "";
-
+    const formatDate = (dataStr: string): string=>{
+        const date:Date= new Date (dataStr);
+        const day: number = date.getDate();
+        const month: string = date.toLocaleString('default', { month: 'short'})
+        const year: number = date.getFullYear();
+        
+        return `${day} ${month} ${year}`;
+    }
+    const createdDate = data.created_at ? formatDate(data.created_at) : "";
+    
     return (
         <div>
             <main className={`flex flex-col gap-y-10 pt-10 h-[30rem] rounded-[0.8rem] ${theme === 'light' ? 'bg-[#fffffe]' : 'bg-[#1f2a48]'}`}>
