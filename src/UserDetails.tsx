@@ -36,7 +36,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
                 <section className='ml-[13.27rem] mr-4   flex flex-col gap-y-4'>
                     <div className={` rounded-[0.8rem] h-[6rem]  ${theme === 'light' ? 'bg-[#f4f9ff]' : 'bg-[#151d2f]'}  flex flex-row px-6 items-center justify-between`}>
                         <div className='flex flex-col'>
-                            <p className={ `${theme ===  'light' ? 'text-[#a7b0c0]' : 'text-[#dcdee1]'}`}>Repos</p>
+                            <p className={ `${theme ===  'light' ? 'text-[#1f2a3c]' : 'text-[#dcdee1]'}`}>Repos</p>
                             <p className={`font-bold text-[1.3rem] ${theme === 'light' ? 'text-[#000]' : 'text-[#fffefe]'}`}>{data.public_repos}</p>
                         </div>
                         <div className='flex flex-col'>
