@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
   return (
     <div className={`${theme === 'light' ? 'bg-[#f4f9ff]' : 'bg-[#151d2f]'} w-full min-h-screen border-box p-0 m-0 font-space flex flex-row items-center justify-center`}>
-      <div className=' w-[60%] flex flex-col gap-y-6'>
+      <div className=' w-[65%] flex flex-col gap-y-6'>
         <header className='flex flex-row items-center justify-between'>
           <h1 className={`${theme === 'light' ? 'text-[#4f535b]' : 'text-[#d3d4d8]'} font-bold text-[1.7rem]`}>
             devfinder

@@ -21,3 +21,5 @@ This is web application that indulges:
 
 * User finder or devfinder app has a theme feature that allows to toggle between  dark and light themes.
 
+# Defects in  stylings
+* Alignments inappropriate

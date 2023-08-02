@@ -15,20 +15,26 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
 
     return (
         <div>
-            <main className={`flex flex-col gap-y-4 pt-10 h-[30rem] rounded-[0.6rem] ${theme === 'light' ? 'bg-[#fffffe]' : 'bg-[#1f2a48]'}`}>
-                <section className='flex flex-row gap-4 mx-4'>
-                    <div className='h-[10rem] w-[10rem] rounded-full'>
-                        <img className='rounded-full' src={data.avatar_url}/>
+            <main className={`flex flex-col gap-y-7 pt-10 h-[30rem] rounded-[0.8rem] ${theme === 'light' ? 'bg-[#fffffe]' : 'bg-[#1f2a48]'}`}>
+                <section className='flex flex-col mx-6 '>
+                    <div className='flex flex-row justify-between'>
+                        <div className='flex flex-row justify-center gap-9 '>
+                            <div className='h-[9rem] w-[9rem] rounded-full'>
+                                <img className='rounded-full' src={data.avatar_url}/>
+                            </div>
+                            <div className='flex flex-col gap-y-[2.3rem] '>
+                                <div>
+                                    <h1 className={`${theme === 'light' ? 'text-[#5f636b]' : 'text-[#fafbfa]'} text-[1.7rem] font-bold`}>{data.name}</h1>
+                                    <p className='text-[#017bfc] font-medium'>@{data.login}</p>
+                                </div>
+                                <p className='text-[#b4b7c2]'>{data.bio ? data.bio  : 'This profile has no bio'}</p>
+                            </div>
+                        </div>
+                        <p className='w-[12rem] text-[#c7c6cd] text-right font-medium'>Joined {createdDate}</p>
                     </div>
-                    <div className=' w-[10rem]'>
-                        <h1 className={`${theme === 'light' ? 'text-[#5f636b]' : 'text-[#fafbfa]'} text-[1.7rem] font-semibold`}>{data.name}</h1>
-                        <p className='text-[#70cafc] font-medium'>@{data.login}</p>
-                    </div>
-                    <p className='h-6 text-[#c7c6cd] font-medium'>Joined {createdDate}</p>
                 </section>
-                <section className='ml-[9.4rem] mr-4 mx-4  flex flex-col gap-y-4'>
-                    <p className='text-[#b4b7c2]'>{data.bio ? data.bio  : 'This profile has no bio'}</p>
-                    <div className={`w-full rounded-[0.8rem] h-[8rem]  ${theme === 'light' ? 'bg-[#f4f9ff]' : 'bg-[#151d2f]'} flex flex-row px-6 items-center justify-between`}>
+                <section className='ml-[13.27rem] mr-4   flex flex-col gap-y-4'>
+                    <div className={` rounded-[0.8rem] h-[6rem]  ${theme === 'light' ? 'bg-[#f4f9ff]' : 'bg-[#151d2f]'}  flex flex-row px-6 items-center justify-between`}>
                         <div className='flex flex-col'>
                             <p className={ `${theme ===  'light' ? 'text-[#a7b0c0]' : 'text-[#dcdee1]'}`}>Repos</p>
                             <p className={`font-bold text-[1.3rem] ${theme === 'light' ? 'text-[#000]' : 'text-[#fffefe]'}`}>{data.public_repos}</p>
@@ -37,13 +43,13 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
                             <p className={ `${theme ===  'light' ? 'text-[#a7b0c0]' : 'text-[#dcdee1]'}`}>Followers</p>
                             <p className={`font-bold text-[1.3rem] ${theme === 'light' ? 'text-[#000]' : 'text-[#fffefe]'}`}>{data.followers}</p>
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-16'>
                             <p className={ `${theme ===  'light' ? 'text-[#a7b0c0]' : 'text-[#dcdee1]'}`}>Following</p>
                             <p className={`font-bold text-[1.3rem] ${theme === 'light' ? 'text-[#000]' : 'text-[#fffefe]'}`}>{data.following}</p>
                         </div>
                     </div>
                 </section>
-                <section className={` ${theme === 'light' ? 'text-[#b4b7c2]' : 'text-[#fffefe]'} ml-[9.4rem] flex flex-row  justify-between items-center  mr-6`}>
+                <section className={` ${theme === 'light' ? 'text-[#b4b7c2]' : 'text-[#fffefe]'} ml-[13.27rem] flex flex-row  justify-between items-center  mr-6`}>
                     <div className='flex flex-col gap-y-2'>
                         <div className='flex gap-2'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`w-6 h-6  ${theme === 'light' ? 'fill-[#4c6896]' : 'fill-[#fffefe]'}`}>
@@ -56,7 +62,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`w-6 h-6  ${theme === 'light' ? 'fill-[#4c6896]' : 'fill-[#fffefe]'}`}>
                                 <path fillRule="evenodd" d="M19.902 4.098a3.75 3.75 0 00-5.304 0l-4.5 4.5a3.75 3.75 0 001.035 6.037.75.75 0 01-.646 1.353 5.25 5.25 0 01-1.449-8.45l4.5-4.5a5.25 5.25 0 117.424 7.424l-1.757 1.757a.75.75 0 11-1.06-1.06l1.757-1.757a3.75 3.75 0 000-5.304zm-7.389 4.267a.75.75 0 011-.353 5.25 5.25 0 011.449 8.45l-4.5 4.5a5.25 5.25 0 11-7.424-7.424l1.757-1.757a.75.75 0 111.06 1.06l-1.757 1.757a3.75 3.75 0 105.304 5.304l4.5-4.5a3.75 3.75 0 00-1.035-6.037.75.75 0 01-.354-1z" clipRule="evenodd" />
                             </svg>
-                            <p>{data.blog}</p>
+                            <a>{data.blog}</a>
                         </div>
                     </div>
                     <div className='flex flex-col gap-y-2'>
