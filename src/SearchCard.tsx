@@ -19,7 +19,7 @@ const SearchUser: React.FC<SearchUserProps> = ({ username, setUsername, handleRe
                     </svg>
                     <input className={`focus:outline-none font-semibold text-[#bbbec3] ${theme === 'light' ? 'bg-[#fffffe]' : 'bg-[#1f2a48]'} w-full h-full text-[1.5rem]`}  placeholder='Search Github username...' value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
-                <button className='h-[3.4rem] w-[8.2rem] font-medium bg-[#017bfc] text-[#91cbec] rounded-[0.5rem] px-4 cursor-pointer hover:bg-[#91cbec] hover:text-[#f4f9ff]' onClick={() => handleRequest(username)}>Search</button>
+                <button className='h-[3.4rem] w-[8.2rem] font-medium bg-[#017bfc] rounded-[0.5rem] px-4 cursor-pointer hover:bg-[#91cbec] text-[#f4f9ff]' onClick={() => handleRequest(username)}>Search</button>
             </section>
         </div>
     );

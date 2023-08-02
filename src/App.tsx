@@ -6,6 +6,7 @@ import UserDetails from './UserDetails.tsx';
 import ThemeSwitcher from './Theme-switcher.tsx';
 import { UserData } from './interface.ts';
 import { setTheme } from './store.ts';
+import  NotFound from './assets/undraw_page_not_found_re_e9o6.svg'
 
 const App: React.FC = () => {
   const theme = useSelector((state: { theme: string })=> state.theme);
@@ -31,10 +32,10 @@ const App: React.FC = () => {
         throw new Error("Request failed with status: " + response.status)
       }
       const user: UserData = await response.json();
-
       setData(user)
     }catch(error){
       console.log(error)
+      setData(null);
     }
   }
 
@@ -48,7 +49,17 @@ const App: React.FC = () => {
           <ThemeSwitcher theme={storeTheme} setStoreTheme={setStoreTheme} />
         </header>
         <SearchUser theme={storeTheme} username={username} setUsername={setUsername} handleRequest={handleApiRequest}/>
-        <UserDetails theme={storeTheme} data={data} />
+        {data ?
+          (
+            <UserDetails theme={storeTheme} data={data} />
+          ) : 
+          (
+            <div className='flex flex-col pt-6 mx-auto gap-y-4'>
+              <img className = 'h-[20rem]' src={NotFound}  />
+              <p className={` ${storeTheme === 'light' ? 'text-woodsmoke' : 'text-white' } self-center`}>User not found</p>
+            </div>
+          )  
+        }
       </div>
     </div>
   );
