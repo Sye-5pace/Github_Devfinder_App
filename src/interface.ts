@@ -5,7 +5,7 @@ export interface UserData {
     avatar_url: string;
     gravatar_id: string;
     url: string;
-    html_url: string | null;
+    html_url: string | undefined;
     followers_url: string;
     following_url: string;
     gists_url: string;
