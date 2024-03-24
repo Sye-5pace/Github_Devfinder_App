@@ -1,6 +1,6 @@
 import React,{ useState,useEffect } from 'react'
-import './index.css';
 import { useDispatch, useSelector } from 'react-redux'
+import './index.css';
 import SearchUser from './SearchCard.tsx';
 import UserDetails from './UserDetails.tsx';
 import ThemeSwitcher from './Theme-switcher.tsx';

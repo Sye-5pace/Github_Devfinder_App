@@ -28,10 +28,10 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
                     <div className='flex flex-row justify-between'>
                         <div className='flex flex-row justify-center gap-[3rem] mobile:gap-0'>
                             <div className='h-[9rem] w-[9rem]  ml-[3rem] mobile:ml-5'>
-                                <img className='rounded-full mobile:w-[6.5rem] mobile:h-[6.5rem]' src={data.avatar_url}/>
+                                <img className='rounded-full mobile:w-[6.5rem] mobile:h-[6.5rem]' src={data.avatar_url} alt="user-image"/>
                             </div>
                             <div className='flex flex-col gap-y-[2.3rem] mobile:gap-y-[1.5rem]'>
-                                <div class="w-full">
+                                <div >
                                     <h1 className={`${theme === 'light' ? 'text-[#5f636b]' : 'text-[#fafbfa]'} text-[1.7rem] mobile:text-[1.5rem] font-bold`}>{data.name}</h1>
                                     <p className='text-[#017bfc] font-medium'>@{data.login}</p>
                                     <p className='mobile:w-full text-[#c7c6cd] text-right font-medium laptop:hidden '>Joined {createdDate}</p>
@@ -93,6 +93,6 @@ const UserDetails: React.FC<UserDetailsProps> = ({data, theme}) => {
             </main>
         </div>
     );
-}
+};
 
 export default UserDetails;

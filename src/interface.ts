@@ -33,6 +33,3 @@ export interface UserData {
     updated_at: string;
   }
 
-  // blog: string | null;
-  // html_url: string | null;
-  // company: string | null;
