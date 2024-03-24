@@ -6,6 +6,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'mobile': {'min':'200px','max':'900px'},
+      'laptop': {'min':'900px'}
+    },
     fontFamily:{
       space:['Space Mono', 'monospace']
     },
